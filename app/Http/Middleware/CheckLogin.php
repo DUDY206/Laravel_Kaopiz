@@ -15,8 +15,10 @@ class CheckLogin
      */
     public function handle($request, Closure $next)
     {
+
         if($request->path() !=='login'){
-            if(!$request->token){
+//            print_r($request);
+            if($request->_token === ''){
                 return redirect('login');
             }
         }

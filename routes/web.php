@@ -21,4 +21,6 @@ Route::get('/login',function(){
 });
 Route::post('/login',array('uses' => 'LoginController@checkLogin'));
 
-
+Route::get('/userinfo/{userid}',function($userid){
+    return view('userinfo/show')->with('userid',$userid);
+});

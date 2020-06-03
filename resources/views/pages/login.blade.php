@@ -57,9 +57,11 @@
                         <label class="forgot-password"><a href="#">Quên mật khẩu?<a></label>
 
                     </div>
-
+                    @include('inc.message');
                     <br>
+
                     <button type="submit" class="btn btn-lg btn-block btn-success">Đăng nhập</button>
+
                 </form>
                 <!-- End Loging form -->
 
@@ -68,7 +70,12 @@
     </div>
 </div>
 <script type="text/javascript">
-    document.getElementById('RMB_login').defaultChecked = true
+    document.getElementById('RMB_login').defaultChecked = true;
+    document.getElementsByClassName('close')[0].onclick = function(){
+        var element = document.getElementsByClassName('alert')[0];
+        element.parentNode.removeChild(element);
+    }
+
 </script>
 
 </body>
