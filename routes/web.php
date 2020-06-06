@@ -23,9 +23,6 @@ Route::get('/login',function(){
 });
 Route::post('/login','LoginController@checkLogin');
 
-Route::get('/userinfo/{userid}',function($userid){
-    return view('userinfo/show')->with('userid',$userid);
-});
 
 
 //User query buider test
@@ -99,3 +96,13 @@ Route::get('where',function (){
    $product = DB::table('products')->where('name','LIKE','%3')->get();
    dd($product);
 });
+
+//find user by id,name,role
+Route::get('users/find',function (){
+   return view('userinfo/find') ;
+});
+Route::get('users/find1','UserInfoController@find');
+//Route::get('users/find1',function (){
+//    return view('userinfo/find') ;
+//});
+
