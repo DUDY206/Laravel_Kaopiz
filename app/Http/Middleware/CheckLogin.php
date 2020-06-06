@@ -17,8 +17,7 @@ class CheckLogin
     {
 
         if($request->path() !=='login'){
-//            print_r($request);
-            if($request->_token === ''){
+            if(!$request->header('token')){
                 return redirect('login');
             }
         }

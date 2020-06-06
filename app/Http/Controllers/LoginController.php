@@ -12,7 +12,12 @@ class LoginController extends Controller
             'sdt'=>'required',
             'password'=>'required',
         ],['sdt.required' => 'Phone number is required','password.required'=> 'Password is required']);
-        return redirect('');
+        return redirect('?token=123');
     }
+
+    function check(){
+        return response()->json(['data'=>'ok']);
+    }
+
 
 }

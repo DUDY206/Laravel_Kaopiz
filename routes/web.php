@@ -19,7 +19,7 @@ Route::get('/', function () {
 Route::get('/login',function(){
     return view('pages/login');
 });
-Route::post('/login',array('uses' => 'LoginController@checkLogin'));
+Route::post('/login','LoginController@checkLogin');
 
 Route::get('/userinfo/{userid}',function($userid){
     return view('userinfo/show')->with('userid',$userid);
