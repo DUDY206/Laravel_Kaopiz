@@ -102,7 +102,15 @@ Route::get('users/find',function (){
    return view('userinfo/find') ;
 });
 Route::get('users/find1','UserInfoController@find');
-//Route::get('users/find1',function (){
-//    return view('userinfo/find') ;
-//});
+
+Route::get('get-phone',function (){
+    return \App\User::find(1)->phone;
+});
+
+Route::get('users/find-phone-role',function (){
+    return view('userinfo/find-phone-role') ;
+});
+
+Route::get('users/find-phone-role-1','UserInfoController@find_phone_role');
+
 

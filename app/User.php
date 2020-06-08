@@ -5,11 +5,19 @@ namespace App;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
-
+use Illuminate\Database\Eloquent\Model as Eloquent;
 class User extends Eloquent
 {
+
     use Notifiable;
 
+    public function phone(){
+        return $this->hasMany('App\Phone');
+    }
+
+    public function role(){
+        return $this->belongsToMany('App\Role', 'role_user', 'user_id');
+    }
     protected $table = 'users';
 
     /**
@@ -29,4 +37,6 @@ class User extends Eloquent
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+
 }
